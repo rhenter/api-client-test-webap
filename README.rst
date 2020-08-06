@@ -28,6 +28,8 @@ Usando Virtualenv Wrapper
 
 Usando pyenv virtualenv
 
+.. code-block:: shell
+
     $ git clone git@github.com:rhenter/api-client-test-webapp.git
     $ cd bookstore-api
     $ pyenv virtualenv bookstore_api
