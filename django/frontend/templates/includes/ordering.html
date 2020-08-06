@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="form-group">
+  <select class="custom-select custom-select-sm form-control" name="ordering" id="ordering" onchange="this.form.submit()">
+    {% for filter in ordering_filter %}
+      {% if ordering == filter.value %}
+      <option value="{{ filter.value }}" selected>{{ filter.name }}</option>
+      {% else %}
+      <option value="{{ filter.value }}">{{ filter.name }}</option>
+      {% endif %}
+    {% endfor %}
+  </select>
+</div>

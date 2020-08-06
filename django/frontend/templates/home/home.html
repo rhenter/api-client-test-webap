@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load static %}
+
+{% block content %}
+
+  <h1>Home Page</h1>
+
+   <div class="col-lg-2 col-5">
+      <!-- small card -->
+      <div class="small-box bg-gradient-green">
+
+        <div class="inner">
+          <h3>{{ total_books }}</h3>
+
+          <p>{% trans 'Books' %}</p>
+        </div>
+        <div class="icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <a href="{% url 'book:list' %}" class="small-box-footer">{% trans 'Mais Info' %} <i
+            class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+
+{% endblock content %}

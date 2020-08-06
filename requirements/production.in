@@ -1,0 +1,16 @@
+dj-database-url
+dj-static
+django
+django-api-client
+django-active-link
+django-cache-url
+django-cors-headers
+django-filter
+django-redis
+django-stuff
+django-widget-tweaks
+prettyconf
+requests
+unipath
+uwsgi
+whitenoise

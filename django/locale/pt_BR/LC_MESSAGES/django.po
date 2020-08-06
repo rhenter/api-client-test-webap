@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-06 17:33-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: apps/book/forms.py:8 apps/book/forms.py:13
+msgid "Description"
+msgstr "Descrição"
+
+#: apps/book/forms.py:12 frontend/templates/book/book_list.html:41
+msgid "Name"
+msgstr "Nome"
+
+#: apps/book/views.py:12
+msgid "Books List"
+msgstr "Listagem de Livros"
+
+#: apps/book/views.py:21 frontend/templates/book/book_list.html:25
+msgid "New Book"
+msgstr "Novo Livro"
+
+#: apps/book/views.py:29
+msgid "Edit Book"
+msgstr "Editar Livro"
+
+#: frontend/templates/book/book_form.html:15
+#: frontend/templates/book/book_list.html:13
+msgid "Home"
+msgstr ""
+
+#: frontend/templates/book/book_form.html:18
+#: frontend/templates/home/home.html:17
+msgid "Books"
+msgstr "Livros"
+
+#: frontend/templates/book/book_form.html:26
+msgid "Book Data"
+msgstr "Dados do Livro"
+
+#: frontend/templates/book/book_form.html:39
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: frontend/templates/book/book_form.html:40
+msgid "Save"
+msgstr "Salvar"
+
+#: frontend/templates/book/book_list.html:24
+msgid "New"
+msgstr "Novo"
+
+#: frontend/templates/book/book_list.html:28
+msgid "Book List"
+msgstr "Listagem de Livros"
+
+#: frontend/templates/book/book_list.html:32
+msgid "Nome do livro"
+msgstr ""
+
+#: frontend/templates/book/book_list.html:42
+msgid "Is active"
+msgstr "Ativo"
+
+#: frontend/templates/book/book_list.html:43
+#: frontend/templates/book/book_list.html:51
+#: frontend/templates/book/book_list.html:55
+msgid "Edit"
+msgstr "Editar"
+
+#: frontend/templates/book/book_list.html:67
+msgid "There aren't books registered"
+msgstr "Não existem livros cadastrados"
+
+#: frontend/templates/book/book_list.html:68
+msgid "with this search."
+msgstr "com esta busca"
+
+#: frontend/templates/home/home.html:22
+msgid "Mais Info"
+msgstr ""
+
+#: frontend/templates/includes/form_field.html:97
+msgid "days"
+msgstr "dias"
+
+#: frontend/templates/includes/form_paginator.html:7
+#: frontend/templates/includes/page-pagination.html:5
+msgid "of"
+msgstr "de"
+
+#: frontend/templates/includes/form_paginator.html:8
+#: frontend/templates/includes/page-pagination.html:6
+msgid "page"
+msgstr "pagina"
+
+#: frontend/templates/includes/modal-loading.html:8
+msgid "loading"
+msgstr ""
+
+#: frontend/templates/includes/paginate_by.html:6
+msgid "Show"
+msgstr "Exibir"
+
+#: frontend/templates/includes/search.html:16
+msgid "Clear"
+msgstr "Limpar"
+
+#: frontend/templates/login.html:33
+msgid "Login"
+msgstr ""
+
+#: frontend/templates/login.html:37
+msgid "Username or Email"
+msgstr "Usuário ou Email"
+
+#: frontend/templates/login.html:51
+msgid "Password"
+msgstr "Senha"

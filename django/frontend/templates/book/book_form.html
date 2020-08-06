@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block htmltitle %}
+  {{ page_title }}
+{% endblock %}
+{% block page_title %}
+  {{ page_title }}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'core:home_admin' %}"><i class="fa fa-dashboard"></i> {% trans 'Home' %}
+  </a></li>
+  <li class="breadcrumb-item"><a href="{% url 'book:list' %}"><i
+      class="fa fa-id-card-o"></i> {% trans 'Books' %}</a></li>
+  <li class="breadcrumb-item active">{{ page_title }}</li>
+{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-navy card-outline">
+        <div class="card-header">
+          <h3 class="card-title">{% trans 'Book Data' %}</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <form class="form-horizontal" role="form" method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include "includes/form_errors.html" with form=form %}
+
+            {% for field in form %}
+              {% include 'includes/form_field.html' with field=field %}
+            {% endfor %}
+
+            <div class="card-footer">
+              <a href="{% url 'book:list' %}" class="btn btn-primary">{% trans "Cancel" %}</a>
+              <button class="btn btn-success float-right" type="submit">{% trans "Save" %}</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

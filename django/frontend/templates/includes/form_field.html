@@ -1,0 +1,135 @@
+{% load i18n %}
+{% load l10n %}
+{% load widget_tweaks %}
+
+
+<div id="group-id-{{ field.name }}" class="form-group form-inline">
+  <label for="id_{{ field.name }}" class="col-sm-2 col-md-2">
+    {% trans field.label %}
+  </label>
+
+  {% if field.name in 'ie, version, address_number, minimum_quantity' or field.name == 'supplier_code' %}
+    {% if field.errors %}
+      {% render_field field class="form-control is-invalid" size="15%" %}
+    {% else %}
+      {% render_field field class="form-control" size="15%" %}
+    {% endif %}
+  {% elif field.name != 'help' and field.name in 'text, message, description, help_text, label' %}
+    {% if field.errors %}
+      {% render_field field class="form-control textarea is-invalid" %}
+    {% else %}
+      {% render_field field class="form-control textarea" %}
+    {% endif %}
+  {% elif field.name in 'state, profile_type, unit, sex, crt, currency, type, category, parent_category, tax_regime, faq_type, role' %}
+    {% if field.errors %}
+      {% render_field field class="form-control select2 is-invalid" %}
+    {% else %}
+      {% render_field field class="form-control select2" %}
+    {% endif %}
+  {% elif field.name in 'notification_type, message_type, condo, supplier, property_manager, pricing_method recipient_type blocked_type' and field.name != 'blocked' %}
+    {% if field.errors %}
+      {% render_field field class="form-control select2 is-invalid" %}
+    {% else %}
+      {% render_field field class="form-control select2" %}
+    {% endif %}
+  {% elif 'phone' in field.name or field.name == 'message_to' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+      </div>
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" width="100%" %}
+      {% else %}
+        {% render_field field class="form-control" width="100%" %}
+      {% endif %}
+    </div>
+  {% elif field.name in 'cpf, document_id, cnpj' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+      </div>
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" width="20%" %}
+      {% else %}
+        {% render_field field class="form-control" width="20%" %}
+      {% endif %}
+    </div>
+  {% elif field.name in 'email, email_contact' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+      </div>
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" size="70%" type="email" %}
+      {% else %}
+        {% render_field field class="form-control" size="70%" type="email" %}
+      {% endif %}
+    </div>
+  {% elif field.name in 'value, offer, joint_stock' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">R$</span>
+      </div>
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" width="20%" %}
+      {% else %}
+        {% render_field field class="form-control" size="20%" %}
+      {% endif %}
+    </div>
+  {% elif field.name == 'address_zip_code' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fa fa-globe"></i></span>
+      </div>
+      <input type="text" name="{{ field.name }}" id="id_{{ field.name }}"
+             value="{% if field.value %}{{ field.value }}{% endif %}"
+             class="form-control"
+             data-inputmask='"mask": "99999-999"'
+             data-mask>
+    </div>
+  {% elif field.name in 'payment_term' %}
+    <div class="input-group">
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" width="20%" %}
+      {% else %}
+        {% render_field field class="form-control" size="20%" %}
+      {% endif %}
+      <span class="input-group-prepend">{% trans 'days' %}</span>
+    </div>
+  {% elif field.name in 'start_date, end_date, birthdate, delivery_date, opening_date' %}
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="far fa-calendar-alt"></i>
+        </span>
+      </div>
+      {% if field.errors %}
+        {% render_field field class="form-control float-right calendar is-invalid" width="25%" %}
+      {% else %}
+        {% render_field field class+="form-control float-right calendar" width="25%" %}
+      {% endif %}
+    </div>
+  {% elif field.name == 'username' %}
+    {% if field.errors %}
+      {% render_field field class="form-control is-invalid" %}
+    {% else %}
+      {% render_field field class="form-control" %}
+    {% endif %}
+  {% elif field.name == 'password' or field.name  == 'password2' %}
+    {% if field.errors %}
+      {% render_field field class="form-control is-invalid" type="password" %}
+    {% else %}
+      {% render_field field class="form-control" type="password" %}
+    {% endif %}
+  {% else %}
+    {% if field.errors %}
+      {% render_field field class="form-control is-invalid" size="100%" %}
+    {% else %}
+      {% render_field field class="form-control" size="100%" %}
+    {% endif %}
+  {% endif %}
+
+  {% if field.errors %}
+    <span class="col-sm-2 col-md-2 error invalid-feedback">{{ field.errors|join:"<br/>" }}</span>
+  {% endif %}
+</div>

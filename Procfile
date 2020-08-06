@@ -1,0 +1,1 @@
+ web: gunicorn --chdir=django bookstore_webapp.wsgi:application
